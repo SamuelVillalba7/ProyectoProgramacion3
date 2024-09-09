@@ -55,10 +55,18 @@ namespace TP_WinForm
             
             try
             {
-                articulo = (Articulo)dgvArticulos.CurrentRow.DataBoundItem;
-                ArticuloNegocio articuloNegocio = new ArticuloNegocio();
-                articuloNegocio.eliminar(articulo.IDArticulo);
-                cargar();
+               
+                DialogResult resultado = MessageBox.Show("Desea eliminar el registro","Eliminando",MessageBoxButtons.YesNo,MessageBoxIcon.Warning);
+                
+                if(resultado == DialogResult.Yes)
+                {
+                    articulo = (Articulo)dgvArticulos.CurrentRow.DataBoundItem;
+                    ArticuloNegocio articuloNegocio = new ArticuloNegocio();
+                    articuloNegocio.eliminar(articulo.IDArticulo);
+                    cargar();
+                }
+                
+                
             }
             catch (Exception ex)
             {
@@ -66,6 +74,15 @@ namespace TP_WinForm
                 MessageBox.Show(ex.ToString());
             }
 
+        }
+
+        private void btnModificar_Click(object sender, EventArgs e)
+        {
+
+            Articulo articulo =(Articulo)dgvArticulos.CurrentRow.DataBoundItem;
+            frmAltaArticulo frm = new frmAltaArticulo(articulo);
+            frm.ShowDialog();
+            cargar();
         }
     }
 }

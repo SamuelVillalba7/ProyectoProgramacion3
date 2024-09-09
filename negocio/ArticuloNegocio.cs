@@ -9,7 +9,36 @@ namespace negocio
 {
     public class ArticuloNegocio
     {
+        public void modificar(Articulo articulo)
+        {
 
+            AccesoDatos datos = new AccesoDatos();
+            try
+            {
+                datos.setearConsulta("UPDATE ARTICULOS set Codigo=@Codigo,Nombre=@Nombre,Descripcion=@Descripcion,IdMarca=@IdMarca , IdCategoria=@IdCategoria ,Precio=@Precio where Id=@Id");
+
+                datos.setearParametro("@Codigo", articulo.Codigo);
+                datos.setearParametro("@Nombre", articulo.Nombre);
+                datos.setearParametro("@Descripcion", articulo.Descripcion);
+                datos.setearParametro("@IdMarca", articulo.Marca.IDMarca);
+                datos.setearParametro("@IdCategoria", articulo.Categoria.IDCategoria);
+                datos.setearParametro("@Precio", articulo.Precio);
+                datos.setearParametro("@Id", articulo.IDArticulo);
+
+                datos.ejecutarAccion();
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+            finally
+            {
+                datos.cerrarConexion();
+            }
+
+
+        }
         public void eliminar(int id)
         {
 
@@ -69,7 +98,7 @@ namespace negocio
             AccesoDatos datos = new AccesoDatos();
             try
             {
-                datos.setearConsulta("select a.Id,a.Codigo,a.Nombre,a.Descripcion, m.Descripcion as marcaDescripcion,c.Descripcion as categoriaDescripcion,a.Precio from ARTICULOS as a left join MARCAS AS m on a.IdMarca =m.Id left JOIN CATEGORIAS as c on a.IdCategoria = c.Id");
+                datos.setearConsulta("select a.Id,a.Codigo,a.Nombre,a.Descripcion, m.Descripcion as marcaDescripcion,m.Id as marcaId,c.Descripcion as categoriaDescripcion,c.Id as categoriaId ,a.Precio from ARTICULOS as a left join MARCAS AS m on a.IdMarca =m.Id left JOIN CATEGORIAS as c on a.IdCategoria = c.Id");
                 datos.ejecutarConsulta();
 
                 while (datos.Lector.Read())
@@ -85,12 +114,14 @@ namespace negocio
                     {
                         articulo.Marca= new Marca();
                         articulo.Marca.Nombre = (string)datos.Lector["marcaDescripcion"];
+                        articulo.Marca.IDMarca = (int)datos.Lector["marcaId"];
                     }
 
                     if (!(datos.Lector["categoriaDescripcion"] is DBNull))
                     {   
                         articulo.Categoria= new Categoria();
                         articulo.Categoria.Nombre = (string)datos.Lector["categoriaDescripcion"];
+                        articulo.Categoria.IDCategoria = (int)datos.Lector["categoriaId"];
                     }
                         
                  
