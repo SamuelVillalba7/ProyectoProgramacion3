@@ -14,6 +14,16 @@ namespace TP_WinForm
 {
     public partial class Form1 : Form
     {
+
+
+        public void cargar()
+        {
+            ArticuloNegocio articulo = new ArticuloNegocio();
+            lista = articulo.listar();
+            dgvArticulos.DataSource = lista;
+        }
+
+        private List<Articulo> lista;
         public Form1()
         {
             InitializeComponent();
@@ -21,11 +31,41 @@ namespace TP_WinForm
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            ArticuloNegocio negocio = new ArticuloNegocio();
-            dgvArticulos.DataSource = negocio.listar();
+            cargar();
 
             CategoriaNegocio categoria = new CategoriaNegocio();
             dgvCategorias.DataSource = categoria.listar();
+
+
+            MarcaNegocio marca = new MarcaNegocio();
+            dgvMarca.DataSource = marca.listar();
+        }
+
+        private void btnAgregar_Click(object sender, EventArgs e)
+        {
+            frmAltaArticulo frm = new frmAltaArticulo();
+            frm.ShowDialog();
+            cargar();
+            
+        }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            Articulo articulo = new Articulo();
+            
+            try
+            {
+                articulo = (Articulo)dgvArticulos.CurrentRow.DataBoundItem;
+                ArticuloNegocio articuloNegocio = new ArticuloNegocio();
+                articuloNegocio.eliminar(articulo.IDArticulo);
+                cargar();
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.ToString());
+            }
+
         }
     }
 }
