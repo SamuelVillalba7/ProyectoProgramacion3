@@ -29,14 +29,10 @@
         private void InitializeComponent()
         {
             this.dgvArticulos = new System.Windows.Forms.DataGridView();
-            this.dgvCategorias = new System.Windows.Forms.DataGridView();
-            this.dgvMarca = new System.Windows.Forms.DataGridView();
             this.btnAgregar = new System.Windows.Forms.Button();
             this.btnEliminar = new System.Windows.Forms.Button();
             this.btnModificar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvArticulos)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvCategorias)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvMarca)).BeginInit();
             this.SuspendLayout();
             // 
             // dgvArticulos
@@ -47,22 +43,6 @@
             this.dgvArticulos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvArticulos.Size = new System.Drawing.Size(815, 269);
             this.dgvArticulos.TabIndex = 0;
-            // 
-            // dgvCategorias
-            // 
-            this.dgvCategorias.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvCategorias.Location = new System.Drawing.Point(429, 451);
-            this.dgvCategorias.Name = "dgvCategorias";
-            this.dgvCategorias.Size = new System.Drawing.Size(422, 193);
-            this.dgvCategorias.TabIndex = 1;
-            // 
-            // dgvMarca
-            // 
-            this.dgvMarca.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvMarca.Location = new System.Drawing.Point(12, 451);
-            this.dgvMarca.Name = "dgvMarca";
-            this.dgvMarca.Size = new System.Drawing.Size(353, 193);
-            this.dgvMarca.TabIndex = 2;
             // 
             // btnAgregar
             // 
@@ -98,20 +78,16 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1265, 749);
+            this.ClientSize = new System.Drawing.Size(904, 433);
             this.Controls.Add(this.btnModificar);
             this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.btnAgregar);
-            this.Controls.Add(this.dgvMarca);
-            this.Controls.Add(this.dgvCategorias);
             this.Controls.Add(this.dgvArticulos);
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvArticulos)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvCategorias)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvMarca)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -119,8 +95,6 @@
         #endregion
 
         private System.Windows.Forms.DataGridView dgvArticulos;
-        private System.Windows.Forms.DataGridView dgvCategorias;
-        private System.Windows.Forms.DataGridView dgvMarca;
         private System.Windows.Forms.Button btnAgregar;
         private System.Windows.Forms.Button btnEliminar;
         private System.Windows.Forms.Button btnModificar;

@@ -33,12 +33,6 @@ namespace TP_WinForm
         {
             cargar();
 
-            CategoriaNegocio categoria = new CategoriaNegocio();
-            dgvCategorias.DataSource = categoria.listar();
-
-
-            MarcaNegocio marca = new MarcaNegocio();
-            dgvMarca.DataSource = marca.listar();
         }
 
         private void btnAgregar_Click(object sender, EventArgs e)

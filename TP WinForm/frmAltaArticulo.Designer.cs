@@ -172,6 +172,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "frmAltaArticulo";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Nuevo Articulo";
             this.Load += new System.EventHandler(this.frmAltaArticulo_Load);
             this.ResumeLayout(false);
