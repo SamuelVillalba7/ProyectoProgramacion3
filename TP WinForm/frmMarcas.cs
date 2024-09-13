@@ -1,4 +1,5 @@
-﻿using negocio;
+﻿using dominio;
+using negocio;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -22,6 +23,26 @@ namespace TP_WinForm
         {
             MarcaNegocio marca = new MarcaNegocio();
             dgvMarca.DataSource = marca.listar();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            
+
+
+               AltaMarcas alta = new AltaMarcas();
+            alta.ShowDialog();
+                
+        }
+
+        private void btnModificar_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
