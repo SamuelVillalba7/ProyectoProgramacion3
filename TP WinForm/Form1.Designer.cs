@@ -41,8 +41,12 @@
             this.cboxCriterio = new System.Windows.Forms.ComboBox();
             this.cboxCampo = new System.Windows.Forms.ComboBox();
             this.btnAplicarFiltro = new System.Windows.Forms.Button();
+            this.pbxArticulo = new System.Windows.Forms.PictureBox();
+            this.cboxImagen = new System.Windows.Forms.ComboBox();
+            this.lblImagen = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvArticulos)).BeginInit();
             this.panelFiltros.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxArticulo)).BeginInit();
             this.SuspendLayout();
             // 
             // btnAgregar
@@ -93,6 +97,7 @@
             this.dgvArticulos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvArticulos.Size = new System.Drawing.Size(815, 269);
             this.dgvArticulos.TabIndex = 0;
+            this.dgvArticulos.SelectionChanged += new System.EventHandler(this.dgvArticulos_SelectionChanged);
             // 
             // panelFiltros
             // 
@@ -120,27 +125,27 @@
             this.lblFiltro.AutoSize = true;
             this.lblFiltro.Location = new System.Drawing.Point(468, 16);
             this.lblFiltro.Name = "lblFiltro";
-            this.lblFiltro.Size = new System.Drawing.Size(35, 13);
+            this.lblFiltro.Size = new System.Drawing.Size(29, 13);
             this.lblFiltro.TabIndex = 19;
-            this.lblFiltro.Text = "label1";
+            this.lblFiltro.Text = "Filtro";
             // 
             // lblCriterio
             // 
             this.lblCriterio.AutoSize = true;
             this.lblCriterio.Location = new System.Drawing.Point(248, 16);
             this.lblCriterio.Name = "lblCriterio";
-            this.lblCriterio.Size = new System.Drawing.Size(35, 13);
+            this.lblCriterio.Size = new System.Drawing.Size(39, 13);
             this.lblCriterio.TabIndex = 18;
-            this.lblCriterio.Text = "label1";
+            this.lblCriterio.Text = "Criterio";
             // 
             // lblCampo
             // 
             this.lblCampo.AutoSize = true;
             this.lblCampo.Location = new System.Drawing.Point(28, 16);
             this.lblCampo.Name = "lblCampo";
-            this.lblCampo.Size = new System.Drawing.Size(35, 13);
+            this.lblCampo.Size = new System.Drawing.Size(40, 13);
             this.lblCampo.TabIndex = 17;
-            this.lblCampo.Text = "label1";
+            this.lblCampo.Text = "Campo";
             // 
             // cboxCriterio
             // 
@@ -171,11 +176,42 @@
             this.btnAplicarFiltro.UseVisualStyleBackColor = true;
             this.btnAplicarFiltro.Click += new System.EventHandler(this.btnAplicarFiltro_Click);
             // 
+            // pbxArticulo
+            // 
+            this.pbxArticulo.Location = new System.Drawing.Point(859, 67);
+            this.pbxArticulo.Name = "pbxArticulo";
+            this.pbxArticulo.Size = new System.Drawing.Size(291, 269);
+            this.pbxArticulo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbxArticulo.TabIndex = 8;
+            this.pbxArticulo.TabStop = false;
+            // 
+            // cboxImagen
+            // 
+            this.cboxImagen.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboxImagen.FormattingEnabled = true;
+            this.cboxImagen.Location = new System.Drawing.Point(1018, 366);
+            this.cboxImagen.Name = "cboxImagen";
+            this.cboxImagen.Size = new System.Drawing.Size(91, 21);
+            this.cboxImagen.TabIndex = 9;
+            this.cboxImagen.SelectedIndexChanged += new System.EventHandler(this.cboxImagen_SelectedIndexChanged);
+            // 
+            // lblImagen
+            // 
+            this.lblImagen.AutoSize = true;
+            this.lblImagen.Location = new System.Drawing.Point(900, 369);
+            this.lblImagen.Name = "lblImagen";
+            this.lblImagen.Size = new System.Drawing.Size(94, 13);
+            this.lblImagen.TabIndex = 10;
+            this.lblImagen.Text = "Opcion de Imagen";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(857, 485);
+            this.ClientSize = new System.Drawing.Size(1162, 485);
+            this.Controls.Add(this.lblImagen);
+            this.Controls.Add(this.cboxImagen);
+            this.Controls.Add(this.pbxArticulo);
             this.Controls.Add(this.panelFiltros);
             this.Controls.Add(this.btnFiltro);
             this.Controls.Add(this.btnModificar);
@@ -189,7 +225,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvArticulos)).EndInit();
             this.panelFiltros.ResumeLayout(false);
             this.panelFiltros.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxArticulo)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -207,6 +245,9 @@
         private System.Windows.Forms.ComboBox cboxCriterio;
         private System.Windows.Forms.ComboBox cboxCampo;
         private System.Windows.Forms.Button btnAplicarFiltro;
+        private System.Windows.Forms.PictureBox pbxArticulo;
+        private System.Windows.Forms.ComboBox cboxImagen;
+        private System.Windows.Forms.Label lblImagen;
     }
 }
 

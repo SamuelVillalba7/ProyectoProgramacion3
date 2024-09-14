@@ -15,7 +15,6 @@ namespace TP_WinForm
     public partial class Form1 : Form
     {
 
-
        
         private List<Articulo> lista;
         public Form1()
@@ -30,6 +29,8 @@ namespace TP_WinForm
             dgvArticulos.DataSource = lista;
             panelFiltros.Visible = false;
 
+            cargarImagen(lista[0].Imagenes[0].ToString());
+              
      
 
         }
@@ -38,6 +39,7 @@ namespace TP_WinForm
         private void Form1_Load(object sender, EventArgs e)
         {
             cargar();
+           
 
         }
 
@@ -179,6 +181,37 @@ namespace TP_WinForm
 
 
 
+        }
+
+        private void dgvArticulos_SelectionChanged(object sender, EventArgs e)
+        {
+            Articulo articulo =(Articulo)dgvArticulos.CurrentRow.DataBoundItem;
+            cargarImagen(articulo.Imagenes[0].ToString());
+
+            ImagenNegocio img= new ImagenNegocio();
+            cboxImagen.DataSource = img.listarPorId(articulo.IDArticulo);
+            cboxImagen.ValueMember = "IDArticulo";
+            cboxImagen.DisplayMember = "IdImagen";
+
+
+        }
+
+        private void cargarImagen(string url)
+        {
+            try
+            {
+                pbxArticulo.Load(url);
+            }
+            catch (Exception ex)
+            {
+                pbxArticulo.Load("https://developers.elementor.com/docs/assets/img/elementor-placeholder-image.png");
+            }
+        }
+
+        private void cboxImagen_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string url= cboxImagen.SelectedItem.ToString();
+            cargarImagen(url);
         }
     }
 }
