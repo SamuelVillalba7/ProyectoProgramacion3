@@ -24,7 +24,7 @@ namespace TP_WinForm
         {
             InitializeComponent();
             this.articulo = articulo;
-            Text = "Modificar Pokemon";
+            Text = "Modificar Articulo";
         }
 
         private void frmAltaArticulo_Load(object sender, EventArgs e)
@@ -103,6 +103,11 @@ namespace TP_WinForm
 
                   MessageBox.Show(ex.ToString()) ;
             }
+        }
+
+        private void txtCodigo_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

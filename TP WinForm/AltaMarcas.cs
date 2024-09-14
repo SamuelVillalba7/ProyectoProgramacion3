@@ -45,7 +45,9 @@ namespace TP_WinForm
             Close();
         }
 
+        private void txtID_TextChanged(object sender, EventArgs e)
+        {
 
-        
+        }
     }
 }

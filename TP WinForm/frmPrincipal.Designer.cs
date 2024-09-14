@@ -35,9 +35,10 @@
             // 
             // btnAdministrarArticulos
             // 
-            this.btnAdministrarArticulos.Location = new System.Drawing.Point(253, 99);
+            this.btnAdministrarArticulos.Location = new System.Drawing.Point(337, 122);
+            this.btnAdministrarArticulos.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnAdministrarArticulos.Name = "btnAdministrarArticulos";
-            this.btnAdministrarArticulos.Size = new System.Drawing.Size(243, 52);
+            this.btnAdministrarArticulos.Size = new System.Drawing.Size(324, 64);
             this.btnAdministrarArticulos.TabIndex = 0;
             this.btnAdministrarArticulos.Text = "Administrar Articulos";
             this.btnAdministrarArticulos.UseVisualStyleBackColor = true;
@@ -45,9 +46,10 @@
             // 
             // btnAdministrarMarcas
             // 
-            this.btnAdministrarMarcas.Location = new System.Drawing.Point(253, 242);
+            this.btnAdministrarMarcas.Location = new System.Drawing.Point(337, 298);
+            this.btnAdministrarMarcas.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnAdministrarMarcas.Name = "btnAdministrarMarcas";
-            this.btnAdministrarMarcas.Size = new System.Drawing.Size(243, 52);
+            this.btnAdministrarMarcas.Size = new System.Drawing.Size(324, 64);
             this.btnAdministrarMarcas.TabIndex = 1;
             this.btnAdministrarMarcas.Text = "Administrar Marcas";
             this.btnAdministrarMarcas.UseVisualStyleBackColor = true;
@@ -55,9 +57,10 @@
             // 
             // btnAdministrarCategorias
             // 
-            this.btnAdministrarCategorias.Location = new System.Drawing.Point(253, 169);
+            this.btnAdministrarCategorias.Location = new System.Drawing.Point(337, 208);
+            this.btnAdministrarCategorias.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnAdministrarCategorias.Name = "btnAdministrarCategorias";
-            this.btnAdministrarCategorias.Size = new System.Drawing.Size(243, 52);
+            this.btnAdministrarCategorias.Size = new System.Drawing.Size(324, 64);
             this.btnAdministrarCategorias.TabIndex = 2;
             this.btnAdministrarCategorias.Text = "Administrar Categorias";
             this.btnAdministrarCategorias.UseVisualStyleBackColor = true;
@@ -65,12 +68,13 @@
             // 
             // frmPrincipal
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(768, 403);
+            this.ClientSize = new System.Drawing.Size(1024, 496);
             this.Controls.Add(this.btnAdministrarCategorias);
             this.Controls.Add(this.btnAdministrarMarcas);
             this.Controls.Add(this.btnAdministrarArticulos);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "frmPrincipal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmPrincipal";

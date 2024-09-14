@@ -1,7 +1,6 @@
 ﻿using dominio;
 using negocio;
 using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -18,13 +17,6 @@ namespace TP_WinForm
         public frmMarcas()
         {
             InitializeComponent();
-        }
-        private List<Marca> lista;
-        public void cargar()
-        {
-            MarcaNegocio marca = new MarcaNegocio();
-            lista = marca.listar();
-            dgvMarca.DataSource = lista;
         }
 
         private void frmMarcas_Load(object sender, EventArgs e)
@@ -45,44 +37,16 @@ namespace TP_WinForm
 
         private void btnModificar_Click(object sender, EventArgs e)
         {
-<<<<<<< HEAD
-            Marca marca = (Marca)dgvMarca.CurrentRow.DataBoundItem;
-            AltaMarcas alta = new AltaMarcas();
-            alta.ShowDialog();
-            cargar();
-
-        }
-        private void btnEliminar_Click(object sender, EventArgs e)
-        {
-            Marca marca = new Marca ();
-            
-            try
-            {
-
-                DialogResult resultado = MessageBox.Show("Desea eliminar el registro", "Eliminando", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
-
-                if (resultado == DialogResult.Yes)
-                {
-                    marca = (Marca)dgvMarca.CurrentRow.DataBoundItem;
-                    MarcaNegocio marcaNegocio = new MarcaNegocio();
-                    marcaNegocio.eliminar(marca.IDMarca);
-                    cargar();
-                }
-
-
-            }
-            catch (Exception ex)
-            {
-
-                MessageBox.Show(ex.ToString());
-            }
-=======
 
         }
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
->>>>>>> 9586ce29342795bef0fac8cd34c58e43e951bc43
+
+        }
+
+        private void dgvMarca_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
 
         }
     }
