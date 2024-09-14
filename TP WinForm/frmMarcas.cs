@@ -45,6 +45,7 @@ namespace TP_WinForm
 
         private void btnModificar_Click(object sender, EventArgs e)
         {
+<<<<<<< HEAD
             Marca marca = (Marca)dgvMarca.CurrentRow.DataBoundItem;
             AltaMarcas alta = new AltaMarcas();
             alta.ShowDialog();
@@ -75,6 +76,13 @@ namespace TP_WinForm
 
                 MessageBox.Show(ex.ToString());
             }
+=======
+
+        }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+>>>>>>> 9586ce29342795bef0fac8cd34c58e43e951bc43
 
         }
     }
