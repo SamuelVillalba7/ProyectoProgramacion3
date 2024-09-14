@@ -16,18 +16,24 @@ namespace TP_WinForm
     {
 
 
-        public void cargar()
-        {
-            ArticuloNegocio articulo = new ArticuloNegocio();
-            lista = articulo.listar();
-            dgvArticulos.DataSource = lista;
-        }
-
+       
         private List<Articulo> lista;
         public Form1()
         {
             InitializeComponent();
         }
+
+        public void cargar()
+        {
+            ArticuloNegocio articulo = new ArticuloNegocio();
+            lista = articulo.listar();
+            dgvArticulos.DataSource = lista;
+            panelFiltros.Visible = false;
+
+     
+
+        }
+
 
         private void Form1_Load(object sender, EventArgs e)
         {
@@ -77,6 +83,102 @@ namespace TP_WinForm
             frmAltaArticulo frm = new frmAltaArticulo(articulo);
             frm.ShowDialog();
             cargar();
+        }
+
+        private void btnFiltro_Click(object sender, EventArgs e)
+        {
+            if (panelFiltros.Visible)
+            {
+                panelFiltros.Visible =false;
+                cargar();
+            }
+            else
+            {
+                panelFiltros.Visible = true;
+                cboxCampo.Items.Clear();
+                cboxCriterio.Items.Clear();
+                txtFiltro.Clear();
+                cboxCampo.Items.Add("Id");
+                cboxCampo.Items.Add("Codigo");
+                cboxCampo.Items.Add("Descripcion");
+                cboxCampo.Items.Add("Marca");
+                cboxCampo.Items.Add("Categoria");
+                cboxCampo.Items.Add("Precio");
+
+            }
+
+            
+        }
+
+        private void cboxCampo_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string opc = cboxCampo.SelectedItem.ToString();
+            cboxCriterio.Items.Clear();
+            txtFiltro.Clear();
+            switch (opc)
+            {
+                case "Id":
+                    cboxCriterio.Items.Add("Mayor a");
+                    cboxCriterio.Items.Add("Menor a");
+                    cboxCriterio.Items.Add("Igual a");
+                    break;
+                case "Codigo":
+                    cboxCriterio.Items.Add("Termina en");
+                    cboxCriterio.Items.Add("Comienza con");
+                    cboxCriterio.Items.Add("Contiene");
+
+                    break;
+                case "Descripcion":
+                    cboxCriterio.Items.Add("Termina en");
+                    cboxCriterio.Items.Add("Comienza con");
+                    cboxCriterio.Items.Add("Contiene");
+
+                    break;
+                case "Marca":
+                    cboxCriterio.Items.Add("Termina en");
+                    cboxCriterio.Items.Add("Comienza con");
+                    cboxCriterio.Items.Add("Contiene");
+
+                    break;
+                case "Categoria":
+                    cboxCriterio.Items.Add("Termina en");
+                    cboxCriterio.Items.Add("Comienza con");
+                    cboxCriterio.Items.Add("Contiene");
+
+                    break;
+                case "Precio":
+                    cboxCriterio.Items.Add("Mayor a");
+                    cboxCriterio.Items.Add("Menor a");
+                    cboxCriterio.Items.Add("Igual a");
+
+                    break;
+
+
+
+
+            }
+
+        }
+
+        private void btnAplicarFiltro_Click(object sender, EventArgs e)
+        {
+            ArticuloNegocio negocio = new ArticuloNegocio();
+            try
+            {
+                string campo = cboxCampo.SelectedItem.ToString();
+                string criterio = cboxCriterio.SelectedItem.ToString();
+                string filtro= txtFiltro.Text;
+                dgvArticulos.DataSource = negocio.filtrar(campo,criterio,filtro);
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+
+
+
+
         }
     }
 }
