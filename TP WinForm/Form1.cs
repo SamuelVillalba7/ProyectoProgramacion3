@@ -228,8 +228,10 @@ namespace TP_WinForm
                 Articulo articulo = (Articulo)dgvArticulos.CurrentRow.DataBoundItem;
                 if (articulo.Imagenes != null && articulo.Imagenes.Count > 0)
                 {
+
                     //pbxPokemon.Load(imagen)(articulo.Imagenes[0].ToString());
-                    //cargarImagen(articulo.Imagenes[0].ToString());
+                    cargarImagen(articulo.Imagenes[0].ToString());
+                    
                 }
                 else
                 {
@@ -242,7 +244,7 @@ namespace TP_WinForm
                 if (imagenes != null && imagenes.Count > 0)
                 {
                     cboxImagen.DataSource = imagenes;
-                    //cboxImagen.ValueMember = "IdImagen"; //lo que muestra en el codobox
+                    cboxImagen.ValueMember = "IdImagen"; //lo que muestra en el codobox
                     cboxImagen.DisplayMember = "UrlImagen";
 
 
@@ -268,6 +270,11 @@ namespace TP_WinForm
             cargarImagen(url);
             //Imagen imagenSeleccionada = (Imagen)cboxImagen.SelectedItem;
             //cargarImagen(imagenSeleccionada.UrlImagen);
+
+        }
+
+        private void dgvArticulos_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
 
         }
     }

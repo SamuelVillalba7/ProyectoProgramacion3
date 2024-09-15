@@ -40,7 +40,7 @@
             this.dgvMarca.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllHeaders;
             this.dgvMarca.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvMarca.Location = new System.Drawing.Point(283, 70);
-            this.dgvMarca.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dgvMarca.Margin = new System.Windows.Forms.Padding(4);
             this.dgvMarca.Name = "dgvMarca";
             this.dgvMarca.RowHeadersWidth = 51;
             this.dgvMarca.Size = new System.Drawing.Size(329, 326);
@@ -50,7 +50,7 @@
             // btnAgregar
             // 
             this.btnAgregar.Location = new System.Drawing.Point(28, 401);
-            this.btnAgregar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnAgregar.Margin = new System.Windows.Forms.Padding(4);
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Size = new System.Drawing.Size(137, 48);
             this.btnAgregar.TabIndex = 4;
@@ -61,7 +61,7 @@
             // btnModificar
             // 
             this.btnModificar.Location = new System.Drawing.Point(201, 404);
-            this.btnModificar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnModificar.Margin = new System.Windows.Forms.Padding(4);
             this.btnModificar.Name = "btnModificar";
             this.btnModificar.Size = new System.Drawing.Size(131, 46);
             this.btnModificar.TabIndex = 5;
@@ -72,7 +72,7 @@
             // btnEliminar
             // 
             this.btnEliminar.Location = new System.Drawing.Point(665, 401);
-            this.btnEliminar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnEliminar.Margin = new System.Windows.Forms.Padding(4);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(131, 48);
             this.btnEliminar.TabIndex = 6;
@@ -89,7 +89,8 @@
             this.Controls.Add(this.btnModificar);
             this.Controls.Add(this.btnAgregar);
             this.Controls.Add(this.dgvMarca);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
+            this.MinimumSize = new System.Drawing.Size(867, 549);
             this.Name = "frmMarcas";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmMarcas";
