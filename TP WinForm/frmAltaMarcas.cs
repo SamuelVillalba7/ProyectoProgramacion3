@@ -58,7 +58,7 @@ namespace TP_WinForm
                   //  marca.IDMarca = int.Parse(txtID.Text);
                     marca.Nombre = txtNombre.Text;
                     marcanegocio.agregar(marca);
-                    MessageBox.Show("Agegado exitosamente Pa");
+                    MessageBox.Show("Marca agregada exitosamente");
                     Close();
 
                 }
