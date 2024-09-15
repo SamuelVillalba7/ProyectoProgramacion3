@@ -84,6 +84,7 @@
             this.Controls.Add(this.btnAceptar);
             this.Controls.Add(this.txtNombre);
             this.Controls.Add(this.label2);
+            this.HelpButton = true;
             this.MinimumSize = new System.Drawing.Size(230, 275);
             this.Name = "frmAltaMarcas";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
