@@ -29,6 +29,11 @@ namespace TP_WinForm
 
         private void btnAceptar_Click(object sender, EventArgs e)
         {
+            if (string.IsNullOrWhiteSpace(txtNombre.Text) || string.IsNullOrWhiteSpace(txtID.Text))
+            {
+                MessageBox.Show("Llene todos los campos");
+                return;
+            }
             Marca marca = new Marca();
             MarcaNegocio marcanegocio = new MarcaNegocio();
 
@@ -78,6 +83,11 @@ namespace TP_WinForm
         }
 
         private void txtID_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtNombre_TextChanged(object sender, EventArgs e)
         {
 
         }

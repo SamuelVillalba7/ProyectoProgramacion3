@@ -65,26 +65,47 @@ namespace TP_WinForm
 
         private void btnAgregar_Click(object sender, EventArgs e)
         {
+            //no vacios
+            if (string.IsNullOrWhiteSpace(txtCodigo.Text) || string.IsNullOrWhiteSpace(txtNombre.Text) || string.IsNullOrWhiteSpace(txtDescripcion.Text) || string.IsNullOrWhiteSpace(txtPrecio.Text))
+            {
+                MessageBox.Show("Llene todos los campos");
+                return;
+            }
+            if (!decimal.TryParse(txtPrecio.Text, out decimal precio))
+            {
+                MessageBox.Show("Precio debe ser un numero");
+                return;
+            }
+            //por si a futuro cat y marca estan x default en null
+            if (cboxMarca.SelectedItem == null)
+            {
+                MessageBox.Show("Seleccione una marca");
+                return;
+            }
+            if (cboxCategoria.SelectedItem == null)
+            {
+                MessageBox.Show("Seleccione una categoria");
+                return;
+            }
 
-            
-            ArticuloNegocio articuloNegocio = new ArticuloNegocio();            
-            
+            ArticuloNegocio articuloNegocio = new ArticuloNegocio();
+
             try
             {
                 bool flag = false;
                 if (articulo == null)
-                {   
-                    articulo= new Articulo();
+                {
+                    articulo = new Articulo();
                     flag = true;
                 }
-                articulo.Codigo= txtCodigo.Text;
-                articulo.Nombre= txtNombre.Text;
-                articulo.Descripcion= txtDescripcion.Text;
+                articulo.Codigo = txtCodigo.Text;
+                articulo.Nombre = txtNombre.Text;
+                articulo.Descripcion = txtDescripcion.Text;
                 articulo.Marca = (Marca)cboxMarca.SelectedItem;
                 articulo.Categoria = (Categoria)cboxCategoria.SelectedItem;
-                articulo.Precio= decimal.Parse(txtPrecio.Text);
+                articulo.Precio = decimal.Parse(txtPrecio.Text);
 
-                if (flag==true)
+                if (flag == true)
                 {
                     articuloNegocio.agregar(articulo);
                     MessageBox.Show("Agregado exitosamente");
@@ -94,7 +115,7 @@ namespace TP_WinForm
                     articuloNegocio.modificar(articulo);
                     MessageBox.Show("Modificado exitosamente");
                 }
-         
+
                 Close();
 
             }

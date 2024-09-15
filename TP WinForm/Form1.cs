@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using dominio;
 using negocio;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace TP_WinForm
 {
@@ -164,9 +165,12 @@ namespace TP_WinForm
 
         private void btnAplicarFiltro_Click(object sender, EventArgs e)
         {
+            
             ArticuloNegocio negocio = new ArticuloNegocio();
             try
             {
+                if (validarFiltro())
+                    return;
                 string campo = cboxCampo.SelectedItem.ToString();
                 string criterio = cboxCriterio.SelectedItem.ToString();
                 string filtro= txtFiltro.Text;
@@ -178,22 +182,72 @@ namespace TP_WinForm
                 throw ex;
             }
 
+        
 
 
+        }
+        private bool validarFiltro()
+        {
+            if (cboxCampo.SelectedIndex < 0)
+            {
+                MessageBox.Show("Seleccione el campo para filtrar");
+                return true;
+            }
+            if (cboxCriterio.SelectedIndex < 0)
+            {
+                MessageBox.Show("Seleccione el criterio para filtrar");
+                return true;
+            }
+            if (string.IsNullOrWhiteSpace(txtFiltro.Text))
+            {
+                MessageBox.Show("El filtro no puede estar vacio");
+                return true;
+            }
+            if (!(soloNumeros(txtFiltro.Text)))
+            {
+                MessageBox.Show("Ingrese solo numeros");
+                return true;
+            }
+            return false;
+        }
 
+        private bool soloNumeros(string cadena)
+        {
+            foreach (char caracter in cadena)
+            {
+                if (!(char.IsNumber(caracter)))
+                    return false;
+            }
+            return true;
         }
 
         private void dgvArticulos_SelectionChanged(object sender, EventArgs e)
         {
-            Articulo articulo =(Articulo)dgvArticulos.CurrentRow.DataBoundItem;
-            cargarImagen(articulo.Imagenes[0].ToString());
+            if (dgvArticulos.CurrentRow != null)
+            {
+                Articulo articulo = (Articulo)dgvArticulos.CurrentRow.DataBoundItem;
+                if (articulo.Imagenes != null && articulo.Imagenes.Count > 0)
+                {
+                    //pbxPokemon.Load(imagen)(articulo.Imagenes[0].ToString());
+                    //cargarImagen(articulo.Imagenes[0].ToString());
+                }
+                else
+                {
+                    cargarImagen("https://efectocolibri.com/wp-content/uploads/2021/01/placeholder.png");
+                }
 
-            ImagenNegocio img= new ImagenNegocio();
-            cboxImagen.DataSource = img.listarPorId(articulo.IDArticulo);
-            cboxImagen.ValueMember = "IDArticulo";
-            cboxImagen.DisplayMember = "IdImagen";
+                //Articulo articulo = (Articulo)dgvArticulos.CurrentRow.DataBoundItem;
+                ImagenNegocio imgNegocio = new ImagenNegocio();
+                List<Imagen> imagenes = imgNegocio.listarPorId(articulo.IDArticulo);
+                if (imagenes != null && imagenes.Count > 0)
+                {
+                    cboxImagen.DataSource = imagenes;
+                    //cboxImagen.ValueMember = "IdImagen"; //lo que muestra en el codobox
+                    cboxImagen.DisplayMember = "UrlImagen";
 
 
+                }
+            }
         }
 
         private void cargarImagen(string url)
@@ -212,6 +266,9 @@ namespace TP_WinForm
         {
             string url= cboxImagen.SelectedItem.ToString();
             cargarImagen(url);
+            //Imagen imagenSeleccionada = (Imagen)cboxImagen.SelectedItem;
+            //cargarImagen(imagenSeleccionada.UrlImagen);
+
         }
     }
 }

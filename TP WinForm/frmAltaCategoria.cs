@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Drawing2D;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -40,11 +41,14 @@ namespace TP_WinForm
 
 
 
-        //boton aceptar. no me cambio el nombre ¿?
         private void btnAceptar_Click(object sender, EventArgs e)
         {
             CategoriaNegocio categoriaNegocio = new CategoriaNegocio();
-
+            if (string.IsNullOrWhiteSpace(txtNombreCategoria.Text))
+            {
+                MessageBox.Show("Llene todos los campos");
+                return;
+            }
             try
             {
                 if (categoria == null)
@@ -67,14 +71,17 @@ namespace TP_WinForm
             }
             catch (Exception ex)
             {
-                
+
                 MessageBox.Show(ex.ToString());
             }
         }
 
 
 
-        
+
+
+
+
         private void labelNombreCategoria_Click(object sender, EventArgs e)
         {
 
