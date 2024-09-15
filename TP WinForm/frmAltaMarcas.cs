@@ -27,14 +27,23 @@ namespace TP_WinForm
             Text = "Modificar Marca";
         }
 
+        private void frmAltaMarca_Load(object sender, EventArgs e)
+        {
+            
+            if (marca != null)
+            {
+                txtNombre.Text = marca.Nombre;
+              // int.Parse(txtID.Text) = marca.IDMarca;
+            }
+        }
         private void btnAceptar_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrWhiteSpace(txtNombre.Text) || string.IsNullOrWhiteSpace(txtID.Text))
+            if (string.IsNullOrWhiteSpace(txtNombre.Text) )
             {
                 MessageBox.Show("Llene todos los campos");
                 return;
             }
-            Marca marca = new Marca();
+          //  Marca marca = new Marca();
             MarcaNegocio marcanegocio = new MarcaNegocio();
 
             try
@@ -46,7 +55,7 @@ namespace TP_WinForm
                 marca.Nombre = txtNombre.Text;
                 if (marca.IDMarca == 0)
                 {
-                    marca.IDMarca = int.Parse(txtID.Text);
+                  //  marca.IDMarca = int.Parse(txtID.Text);
                     marca.Nombre = txtNombre.Text;
                     marcanegocio.agregar(marca);
                     MessageBox.Show("Agegado exitosamente Pa");
@@ -66,14 +75,6 @@ namespace TP_WinForm
             {
                 MessageBox.Show(ex.ToString());
              
-            }
-        }
-        private void frmAltaMarca_Load(object sender, EventArgs e)
-        {
-            // en caso de edit
-            if (marca != null)
-            {
-                txtNombre.Text = marca.Nombre;
             }
         }
 
