@@ -60,7 +60,7 @@ namespace TP_WinForm
             }
             else
             {
-                MessageBox.Show("Seleccione una categoría para modificar.");
+                MessageBox.Show("Seleccione una marca para modificar.");
             }
 
         }
@@ -71,7 +71,7 @@ namespace TP_WinForm
             {
                 Marca marcaSeleccionada = (Marca)dgvMarca.CurrentRow.DataBoundItem;
 
-                DialogResult resultado = MessageBox.Show("Seguro que desea eliminar esta categoría?", "Eliminar Categoría", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                DialogResult resultado = MessageBox.Show("Seguro que desea eliminar esta marca?", "Eliminar Marca", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
                 if (resultado == DialogResult.Yes)
                 {
                     MarcaNegocio marcaNegocio = new MarcaNegocio();
@@ -81,7 +81,7 @@ namespace TP_WinForm
             }
             else
             {
-                MessageBox.Show("Seleccione una categoría a eliminar");
+                MessageBox.Show("Seleccione una marca a eliminar");
             }
 
         }

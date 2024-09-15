@@ -51,7 +51,7 @@ namespace TP_WinForm
                 else
                 {
                     marcanegocio.modificar(marca);
-                    MessageBox.Show("Categoría modificada exitosamente.");
+                    MessageBox.Show("Marca modificada exitosamente.");
                 }
                 Close();
 
