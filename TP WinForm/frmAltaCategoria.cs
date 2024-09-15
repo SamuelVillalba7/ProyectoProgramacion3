@@ -41,7 +41,7 @@ namespace TP_WinForm
 
 
         //boton aceptar. no me cambio el nombre ¿?
-        private void button1_Click(object sender, EventArgs e)
+        private void btnAceptar_Click(object sender, EventArgs e)
         {
             CategoriaNegocio categoriaNegocio = new CategoriaNegocio();
 

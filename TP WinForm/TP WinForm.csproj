@@ -46,11 +46,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AltaMarcas.cs">
+    <Compile Include="frmAltaMarcas.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AltaMarcas.Designer.cs">
-      <DependentUpon>AltaMarcas.cs</DependentUpon>
+    <Compile Include="frmAltaMarcas.Designer.cs">
+      <DependentUpon>frmAltaMarcas.cs</DependentUpon>
     </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
@@ -90,8 +90,8 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="AltaMarcas.resx">
-      <DependentUpon>AltaMarcas.cs</DependentUpon>
+    <EmbeddedResource Include="frmAltaMarcas.resx">
+      <DependentUpon>frmAltaMarcas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmAltaArticulo.resx">
       <DependentUpon>frmAltaArticulo.cs</DependentUpon>

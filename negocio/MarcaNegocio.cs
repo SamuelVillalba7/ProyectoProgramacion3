@@ -41,8 +41,8 @@ namespace negocio
 
             try
             {
-                datos.setearConsulta("insert into MARCAS VALUES (@Id,@Descripcion)");
-                datos.setearParametro("@Id", marca.IDMarca);
+                datos.setearConsulta("INSERT INTO MARCAS  VALUES (@descripcion)");
+                datos.setearParametro("@id", marca.IDMarca);
                 datos.setearParametro("@Descripcion", marca.Nombre);
                 datos.ejecutarAccion();
             }
@@ -63,7 +63,7 @@ namespace negocio
             AccesoDatos datos = new AccesoDatos();
             try
             {
-                datos.setearConsulta("UPDATE MARCAS set IDMarca=@IdMarca, Nombre=@Nombre where Id=@IDMarca");
+                datos.setearConsulta("UPDATE MARCAS set IdMarca=@IdMarca, Nombre=@Nombre where IdMarca=@IdMarca");
                 datos.setearParametro("@IdMarca", marca.IDMarca);
                 datos.setearParametro("@Nombre", marca.Nombre); 
                 datos.ejecutarAccion();
