@@ -365,5 +365,32 @@ namespace negocio
                 datos.cerrarConexion();
             }
         }
+
+        public int consultarID(string codigo)
+        {
+            AccesoDatos datos=new AccesoDatos();
+            try
+            {
+                datos.setearConsulta("select Id from ARTICULOS where Codigo = @codigo");
+                datos.setearParametro("@codigo", codigo);
+                datos.ejecutarConsulta();
+                datos.Lector.Read();
+                int id = (int)datos.Lector["Id"];
+
+
+                return id;
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+            finally { datos.cerrarConexion(); }
+
+
+
+           
+
+        }
     }
 }

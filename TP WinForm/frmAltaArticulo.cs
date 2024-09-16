@@ -107,7 +107,11 @@ namespace TP_WinForm
                 if (flag == true)
                 {
                     articuloNegocio.agregar(articulo);
-                    agregarImagenURL(articulo.IDArticulo);
+                    int id = articuloNegocio.consultarID(articulo.Codigo);
+
+                    ImagenNegocio negocioImg= new ImagenNegocio();
+                    string url = txtImagen.Text;
+                    negocioImg.agregarImagenURL(id,url);
                     MessageBox.Show("Agregado exitosamente");
                 }
                 else
@@ -127,33 +131,7 @@ namespace TP_WinForm
         }
 
         //txtImagen
-        private void agregarImagenURL(int idArticulo)
-        {
-            if (!string.IsNullOrWhiteSpace(txtImagen.Text))
-            {
-                Imagen nuevaImagen= new Imagen();
-                nuevaImagen.IDArticulo= idArticulo;
-                nuevaImagen.ImagenUrl= txtImagen.Text;
-
-                // Insertar la imagen en la base de datos
-                AccesoDatos datos= new AccesoDatos();
-
-                try
-                {
-                    datos.setearConsulta("INSERT INTO IMAGENES (IdArticulo, ImagenUrl) VALUES (@IdArticulo, @ImagenUrl)");
-                    datos.setearParametro("@IdArticulo", nuevaImagen.IDArticulo);
-                    datos.setearParametro("@ImagenUrl", nuevaImagen.ImagenUrl);
-                    datos.ejecutarAccion();
-                }
-                catch (Exception ex)
-                {
-                }
-                finally
-                {
-                    datos.cerrarConexion();
-                }
-            }
-        }
+        
 
 
         private void txtCodigo_TextChanged(object sender, EventArgs e)

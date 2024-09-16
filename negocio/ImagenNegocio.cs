@@ -45,5 +45,34 @@ namespace negocio
         }
 
 
+        public void agregarImagenURL(int idArticulo, string url)
+        {
+            if (!string.IsNullOrWhiteSpace(url))
+            {
+                Imagen nuevaImagen = new Imagen();
+                nuevaImagen.IDArticulo = idArticulo;
+                nuevaImagen.ImagenUrl = url;
+
+                // Insertar la imagen en la base de datos
+                AccesoDatos datos = new AccesoDatos();
+
+                try
+                {
+                    datos.setearConsulta("INSERT INTO IMAGENES (IdArticulo, ImagenUrl) VALUES (@IdArticulo, @ImagenUrl)");
+                    datos.setearParametro("@IdArticulo", nuevaImagen.IDArticulo);
+                    datos.setearParametro("@ImagenUrl", nuevaImagen.ImagenUrl);
+                    datos.ejecutarAccion();
+                }
+                catch (Exception ex)
+                {
+                }
+                finally
+                {
+                    datos.cerrarConexion();
+                }
+            }
+        }
+
+
     }
 }
