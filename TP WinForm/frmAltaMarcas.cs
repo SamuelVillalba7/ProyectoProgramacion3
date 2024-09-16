@@ -45,6 +45,12 @@ namespace TP_WinForm
             }
           //  Marca marca = new Marca();
             MarcaNegocio marcanegocio = new MarcaNegocio();
+            //no repetidos
+            if (marcanegocio.existeMarca(txtNombre.Text))
+            {
+                MessageBox.Show("Marca ya existente");
+                return;
+            }
 
             try
             {

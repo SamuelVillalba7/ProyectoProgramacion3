@@ -117,7 +117,7 @@ namespace TP_WinForm
                 }
 
                 Close();
-
+                
             }
             catch (Exception ex)
             {
