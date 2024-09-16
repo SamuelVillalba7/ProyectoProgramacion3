@@ -1,6 +1,6 @@
 ﻿namespace TP_WinForm
 {
-    partial class Form1
+    partial class frmArticulos
     {
         /// <summary>
         /// Variable del diseñador necesaria.
@@ -52,7 +52,7 @@
             // btnAgregar
             // 
             this.btnAgregar.Location = new System.Drawing.Point(16, 450);
-            this.btnAgregar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnAgregar.Margin = new System.Windows.Forms.Padding(4);
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Size = new System.Drawing.Size(178, 44);
             this.btnAgregar.TabIndex = 3;
@@ -64,7 +64,7 @@
             // btnEliminar
             // 
             this.btnEliminar.Location = new System.Drawing.Point(925, 450);
-            this.btnEliminar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnEliminar.Margin = new System.Windows.Forms.Padding(4);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(178, 44);
             this.btnEliminar.TabIndex = 4;
@@ -76,7 +76,7 @@
             // btnModificar
             // 
             this.btnModificar.Location = new System.Drawing.Point(202, 450);
-            this.btnModificar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnModificar.Margin = new System.Windows.Forms.Padding(4);
             this.btnModificar.Name = "btnModificar";
             this.btnModificar.Size = new System.Drawing.Size(178, 44);
             this.btnModificar.TabIndex = 5;
@@ -88,7 +88,7 @@
             // btnFiltro
             // 
             this.btnFiltro.Location = new System.Drawing.Point(388, 450);
-            this.btnFiltro.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnFiltro.Margin = new System.Windows.Forms.Padding(4);
             this.btnFiltro.Name = "btnFiltro";
             this.btnFiltro.Size = new System.Drawing.Size(178, 44);
             this.btnFiltro.TabIndex = 6;
@@ -101,7 +101,7 @@
             // 
             this.dgvArticulos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvArticulos.Location = new System.Drawing.Point(16, 82);
-            this.dgvArticulos.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dgvArticulos.Margin = new System.Windows.Forms.Padding(4);
             this.dgvArticulos.Name = "dgvArticulos";
             this.dgvArticulos.RowHeadersWidth = 51;
             this.dgvArticulos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
@@ -121,7 +121,7 @@
             this.panelFiltros.Controls.Add(this.cboxCampo);
             this.panelFiltros.Controls.Add(this.btnAplicarFiltro);
             this.panelFiltros.Location = new System.Drawing.Point(31, 510);
-            this.panelFiltros.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panelFiltros.Margin = new System.Windows.Forms.Padding(4);
             this.panelFiltros.Name = "panelFiltros";
             this.panelFiltros.Size = new System.Drawing.Size(1059, 66);
             this.panelFiltros.TabIndex = 7;
@@ -130,7 +130,7 @@
             // txtFiltro
             // 
             this.txtFiltro.Location = new System.Drawing.Point(713, 15);
-            this.txtFiltro.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtFiltro.Margin = new System.Windows.Forms.Padding(4);
             this.txtFiltro.Name = "txtFiltro";
             this.txtFiltro.Size = new System.Drawing.Size(132, 22);
             this.txtFiltro.TabIndex = 20;
@@ -174,7 +174,7 @@
             this.cboxCriterio.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboxCriterio.FormattingEnabled = true;
             this.cboxCriterio.Location = new System.Drawing.Point(420, 15);
-            this.cboxCriterio.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cboxCriterio.Margin = new System.Windows.Forms.Padding(4);
             this.cboxCriterio.Name = "cboxCriterio";
             this.cboxCriterio.Size = new System.Drawing.Size(132, 24);
             this.cboxCriterio.TabIndex = 16;
@@ -185,7 +185,7 @@
             this.cboxCampo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboxCampo.FormattingEnabled = true;
             this.cboxCampo.Location = new System.Drawing.Point(127, 15);
-            this.cboxCampo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cboxCampo.Margin = new System.Windows.Forms.Padding(4);
             this.cboxCampo.Name = "cboxCampo";
             this.cboxCampo.Size = new System.Drawing.Size(132, 24);
             this.cboxCampo.TabIndex = 15;
@@ -195,7 +195,7 @@
             // btnAplicarFiltro
             // 
             this.btnAplicarFiltro.Location = new System.Drawing.Point(889, 14);
-            this.btnAplicarFiltro.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnAplicarFiltro.Margin = new System.Windows.Forms.Padding(4);
             this.btnAplicarFiltro.Name = "btnAplicarFiltro";
             this.btnAplicarFiltro.Size = new System.Drawing.Size(133, 28);
             this.btnAplicarFiltro.TabIndex = 14;
@@ -207,7 +207,7 @@
             // pbxArticulo
             // 
             this.pbxArticulo.Location = new System.Drawing.Point(1145, 82);
-            this.pbxArticulo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pbxArticulo.Margin = new System.Windows.Forms.Padding(4);
             this.pbxArticulo.Name = "pbxArticulo";
             this.pbxArticulo.Size = new System.Drawing.Size(388, 331);
             this.pbxArticulo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -220,7 +220,7 @@
             this.cboxImagen.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboxImagen.FormattingEnabled = true;
             this.cboxImagen.Location = new System.Drawing.Point(1357, 450);
-            this.cboxImagen.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cboxImagen.Margin = new System.Windows.Forms.Padding(4);
             this.cboxImagen.Name = "cboxImagen";
             this.cboxImagen.Size = new System.Drawing.Size(120, 24);
             this.cboxImagen.TabIndex = 9;
@@ -238,7 +238,7 @@
             this.lblImagen.Text = "Opcion de Imagen";
             this.lblImagen.UseWaitCursor = true;
             // 
-            // Form1
+            // frmArticulos
             // 
             this.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -254,10 +254,10 @@
             this.Controls.Add(this.btnAgregar);
             this.Controls.Add(this.dgvArticulos);
             this.KeyPreview = true;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximumSize = new System.Drawing.Size(1559, 634);
             this.MinimumSize = new System.Drawing.Size(1386, 634);
-            this.Name = "Form1";
+            this.Name = "frmArticulos";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmArticulos";
             this.UseWaitCursor = true;

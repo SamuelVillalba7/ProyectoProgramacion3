@@ -19,7 +19,7 @@ namespace TP_WinForm
 
         private void btnAdministrarArticulos_Click(object sender, EventArgs e)
         {
-            Form1 form= new Form1();
+            frmArticulos form= new frmArticulos();
             form.ShowDialog();
         }
 

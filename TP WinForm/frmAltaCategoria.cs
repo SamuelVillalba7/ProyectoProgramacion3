@@ -49,7 +49,12 @@ namespace TP_WinForm
                 MessageBox.Show("Llene todos los campos");
                 return;
             }
-            try
+            if (categoriaNegocio.existeCategoria(txtNombreCategoria.Text))
+            {
+                MessageBox.Show("Ya existe esa categoría");
+                return;
+            }
+                try
             {
                 if (categoria == null)
                 {

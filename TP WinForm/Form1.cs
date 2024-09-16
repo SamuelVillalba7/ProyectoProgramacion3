@@ -13,12 +13,12 @@ using static System.Net.Mime.MediaTypeNames;
 
 namespace TP_WinForm
 {
-    public partial class Form1 : Form
+    public partial class frmArticulos : Form
     {
 
        
         private List<Articulo> lista;
-        public Form1()
+        public frmArticulos()
         {
             InitializeComponent();
         }

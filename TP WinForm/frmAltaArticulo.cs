@@ -76,20 +76,19 @@ namespace TP_WinForm
                 MessageBox.Show("Precio debe ser un numero");
                 return;
             }
-            //por si a futuro cat y marca estan x default en null
-            if (cboxMarca.SelectedItem == null)
-            {
-                MessageBox.Show("Seleccione una marca");
-                return;
-            }
-            if (cboxCategoria.SelectedItem == null)
-            {
-                MessageBox.Show("Seleccione una categoria");
-                return;
-            }
+            int idActual = articulo != null ? articulo.IDArticulo : 0;
 
             ArticuloNegocio articuloNegocio = new ArticuloNegocio();
 
+            if (articuloNegocio.existeArticulo(txtNombre.Text, idActual))
+            {
+                if (idActual == 0)
+                {
+                    MessageBox.Show("Ya existe ese Articulo");
+
+                    return;
+                }
+            }
             try
             {
                 bool flag = false;
@@ -108,6 +107,7 @@ namespace TP_WinForm
                 if (flag == true)
                 {
                     articuloNegocio.agregar(articulo);
+                    agregarImagenURL(articulo.IDArticulo);
                     MessageBox.Show("Agregado exitosamente");
                 }
                 else
@@ -126,9 +126,55 @@ namespace TP_WinForm
             }
         }
 
+        //txtImagen
+        private void agregarImagenURL(int idArticulo)
+        {
+            if (!string.IsNullOrWhiteSpace(txtImagen.Text))
+            {
+                Imagen nuevaImagen= new Imagen();
+                nuevaImagen.IDArticulo= idArticulo;
+                nuevaImagen.ImagenUrl= txtImagen.Text;
+
+                // Insertar la imagen en la base de datos
+                AccesoDatos datos= new AccesoDatos();
+
+                try
+                {
+                    datos.setearConsulta("INSERT INTO IMAGENES (IdArticulo, ImagenUrl) VALUES (@IdArticulo, @ImagenUrl)");
+                    datos.setearParametro("@IdArticulo", nuevaImagen.IDArticulo);
+                    datos.setearParametro("@ImagenUrl", nuevaImagen.ImagenUrl);
+                    datos.ejecutarAccion();
+                }
+                catch (Exception ex)
+                {
+                }
+                finally
+                {
+                    datos.cerrarConexion();
+                }
+            }
+        }
+
+
         private void txtCodigo_TextChanged(object sender, EventArgs e)
         {
 
         }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtImagen_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtNombre_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
+
 }
