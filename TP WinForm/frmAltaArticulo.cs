@@ -165,15 +165,35 @@ namespace TP_WinForm
         {
 
         }
+        private void cargarImagen(string imagen)
+        {
+            try
+            {
+                pbxArticulo.Load(imagen);
+            }
+            catch(Exception ex)
+            {
+
+                pbxArticulo.Load("https://efectocolibri.com/wp-content/uploads/2021/01/placeholder.png");
+            }
+        
+        
+        
+        }
 
         private void txtImagen_TextChanged(object sender, EventArgs e)
         {
-
+           // cargarImagen(txtImagen.Text);
         }
 
-        private void txtNombre_TextChanged(object sender, EventArgs e)
-        {
+       private void txtNombre_TextChanged(object sender, EventArgs e)
+       {
+      
+       }
 
+        private void txtImagen_Leave(object sender, EventArgs e)
+        {
+            cargarImagen(txtImagen.Text);
         }
     }
 
